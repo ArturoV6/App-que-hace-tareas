@@ -34,7 +34,7 @@ function buttonClick() {
             const divP = document.getElementById("div-child");
 
             contenedorH.removeChild(divP);
-        }else{
+
             const contenedor = document.getElementById("div-section");
 
             const fragmento = document.createDocumentFragment();
@@ -65,8 +65,37 @@ function buttonClick() {
             contenedor.appendChild(fragmento);
 
             createDiv.appendChild(fragmento2);
-        }
- 
-            
+        }else{
+            const contenedor = document.getElementById("div-section");
+
+            const fragmento = document.createDocumentFragment();
+            const fragmento2 = document.createDocumentFragment();
+
+            let createDiv = document.createElement("div");
+
+            let createClass = document.createAttribute("class");
+
+            createClass.value = "div-class";
+
+            createDiv.setAttributeNode(createClass);
+
+            let createButton = document.createElement("button");
+
+            createButton.innerText = "Eliminar"
+
+            createButton.addEventListener("click", (evento)=>{
+                evento.target.parentNode.remove();
+            });
+
+            createDiv.innerHTML = `<p> ${taskInput} </p>`;
+
+            fragmento.appendChild(createDiv);
+
+            fragmento2.appendChild(createButton);
+        
+            contenedor.appendChild(fragmento);
+
+            createDiv.appendChild(fragmento2); 
+        } 
     }
 };
