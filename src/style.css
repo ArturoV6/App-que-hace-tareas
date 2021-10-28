@@ -16,6 +16,7 @@ header {
 	color: #fff;
 	padding: 50px;
 	width: 100%;
+    height: 230px;
 }
 
 .header-div{
@@ -25,9 +26,10 @@ header {
 
 .input-task{
     outline: none;
-    border: 0.1px solid rgb(189, 187, 187);
+    border: none;
     padding: 13.1px;
     width: 900px;
+    border-radius: 3px;
 }
 
 .main-div{
@@ -40,7 +42,7 @@ header {
     border: 5px solid #eb4949;
     padding: 15px; 
     position: relative;
-    bottom: 24px;
+    bottom: 28px;
 }
 
 .div-section{
@@ -53,7 +55,24 @@ header {
     display: flex;
     width: 900px;
     margin: 0 auto;
-    border-bottom: 1px solid grey;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 0.1px solid grey;
+}
+
+.div-clas{
+    outline: none;
+    border: 3px solid  #bb2929;
+    border-radius: 3px;
+    padding: 13.1px;
+    width: 900px;
+}
+
+.clas{
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 18px;
+    border-bottom: 3px solid #bb2929;
 }

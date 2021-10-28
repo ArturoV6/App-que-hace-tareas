@@ -5,34 +5,89 @@ function buttonClick() {
     let inputTask = document.getElementById("input-task");
     const taskInput = inputTask.value;
 
-    const contenedor = document.getElementById("div-section");
+    if (taskInput ==  0) {
+        const contenedor = document.getElementById("los");
 
-    const fragmento = document.createDocumentFragment();
-    const fragmento2 = document.createDocumentFragment();
+        const sabes = document.getElementById("p")
 
-    let createDiv = document.createElement("div");
+        const fragmento = document.createDocumentFragment();
 
-    let att = document.createAttribute("class");
+        let createDiv = document.createElement("p");
 
-    att.value = "div-class";
+        let a = document.createAttribute("id");
 
-    createDiv.setAttributeNode(att);
+        a.value = "ps"
 
-    let createButton = document.createElement("button");
+        sabes.setAttribute(a);
 
-    createButton.innerText = "Eliminar"
+        let att = document.createAttribute("class");
 
-    createButton.addEventListener("click", (evento)=>{
-        evento.target.parentNode.remove();
-    });
+        att.value = "div-clas";
 
-    createDiv.innerHTML = `<p> ${taskInput} </p>`;
+        inputTask.setAttributeNode(att);
+      
+        let attz = document.createAttribute("class");
 
-    fragmento.appendChild(createDiv);
+        attz.value = "clas";
 
-    fragmento2.appendChild(createButton);
+        sabes.setAttributeNode(attz);
+
+        fragmento.appendChild(sabes);
+
+        contenedor.appendChild(fragmento);
+
+        sabes.innerText = "Porfavor agrega texto tonto"
+
+    }else {
+        porque();
+
+        let cl = document.createAttribute("class");
+
+        cl.value = "input-task";
+
+        inputTask.setAttributeNode(cl);
+
+        const contenedor = document.getElementById("div-section");
+
+        const fragmento = document.createDocumentFragment();
+        const fragmento2 = document.createDocumentFragment();
+
+        let createDiv = document.createElement("div");
+
+        let att = document.createAttribute("class");
+
+        att.value = "div-class";
+
+        createDiv.setAttributeNode(att);
+
+        let createButton = document.createElement("button");
+
+        createButton.innerText = "Eliminar"
+
+        createButton.addEventListener("click", (evento)=>{
+            evento.target.parentNode.remove();
+        });
+
+
+        createDiv.innerHTML = `<p> ${taskInput} </p>`;
+
+        fragmento.appendChild(createDiv);
+
+        fragmento2.appendChild(createButton);
     
-    contenedor.appendChild(fragmento);
+        contenedor.appendChild(fragmento);
 
-    createDiv.appendChild(fragmento2);
+        createDiv.appendChild(fragmento2);
+    }
+
+    function porque() {
+        let contener = document.getElementById("los");
+
+        let parrafo = document.getElementById("ps");
+        if (contener.childNodes.length = 1) {
+            contener.removeChild(parrafo);
+        }else if (contener.childNodes.length = 0) {
+            console.log("g")
+        }
+    }
 };
