@@ -6,88 +6,67 @@ function buttonClick() {
     const taskInput = inputTask.value;
 
     if (taskInput ==  0) {
-        const contenedor = document.getElementById("los");
+        
+        const contenedorH = document.getElementById("div-header");
 
-        const sabes = document.getElementById("p")
+        if (contenedorH.children.length === 0) {
+            const fragmento = document.createDocumentFragment();
 
-        const fragmento = document.createDocumentFragment();
+            let createDivH = document.createElement("div");
 
-        let createDiv = document.createElement("p");
+            let createId = document.createAttribute("id");
 
-        let a = document.createAttribute("id");
+            createId.value = "div-child"
 
-        a.value = "ps"
+            createDivH.setAttributeNode(createId);
 
-        sabes.setAttribute(a);
+            fragmento.appendChild(createDivH);
 
-        let att = document.createAttribute("class");
+            contenedorH.appendChild(fragmento);
 
-        att.value = "div-clas";
-
-        inputTask.setAttributeNode(att);
-      
-        let attz = document.createAttribute("class");
-
-        attz.value = "clas";
-
-        sabes.setAttributeNode(attz);
-
-        fragmento.appendChild(sabes);
-
-        contenedor.appendChild(fragmento);
-
-        sabes.innerText = "Porfavor agrega texto tonto"
-
+            createDivH.innerHTML="<p id=divChildNode> agrega texto </p>";
+        }else{}
+        
     }else {
-        porque();
+        const contenedorH = document.getElementById("div-header");
 
-        let cl = document.createAttribute("class");
+        if (contenedorH.children.length === 1) {
+            const divP = document.getElementById("div-child");
 
-        cl.value = "input-task";
+            contenedorH.removeChild(divP);
+        }else{
+            const contenedor = document.getElementById("div-section");
 
-        inputTask.setAttributeNode(cl);
+            const fragmento = document.createDocumentFragment();
+            const fragmento2 = document.createDocumentFragment();
 
-        const contenedor = document.getElementById("div-section");
+            let createDiv = document.createElement("div");
 
-        const fragmento = document.createDocumentFragment();
-        const fragmento2 = document.createDocumentFragment();
+            let createClass = document.createAttribute("class");
 
-        let createDiv = document.createElement("div");
+            createClass.value = "div-class";
 
-        let att = document.createAttribute("class");
+            createDiv.setAttributeNode(createClass);
 
-        att.value = "div-class";
+            let createButton = document.createElement("button");
 
-        createDiv.setAttributeNode(att);
+            createButton.innerText = "Eliminar"
 
-        let createButton = document.createElement("button");
+            createButton.addEventListener("click", (evento)=>{
+                evento.target.parentNode.remove();
+            });
 
-        createButton.innerText = "Eliminar"
+            createDiv.innerHTML = `<p> ${taskInput} </p>`;
 
-        createButton.addEventListener("click", (evento)=>{
-            evento.target.parentNode.remove();
-        });
+            fragmento.appendChild(createDiv);
 
+            fragmento2.appendChild(createButton);
+        
+            contenedor.appendChild(fragmento);
 
-        createDiv.innerHTML = `<p> ${taskInput} </p>`;
-
-        fragmento.appendChild(createDiv);
-
-        fragmento2.appendChild(createButton);
-    
-        contenedor.appendChild(fragmento);
-
-        createDiv.appendChild(fragmento2);
-    }
-
-    function porque() {
-        let contener = document.getElementById("los");
-
-        let parrafo = document.getElementById("ps");
-        if (contener.childNodes.length = 1) {
-            contener.removeChild(parrafo);
-        }else if (contener.childNodes.length = 0) {
-            console.log("g")
+            createDiv.appendChild(fragmento2);
         }
+ 
+            
     }
 };
